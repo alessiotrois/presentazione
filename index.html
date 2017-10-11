@@ -1,905 +1,189 @@
 <!DOCTYPE HTML>
-
 <!--
-
 	Photon by HTML5 UP
-
-	html5up.net | @n33co
-
+	html5up.net | @ajlkn
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-
 -->
-
 <html>
-
 	<head>
-
-		<title>Analisi sull'errore del tempo di bordo di AGILE</title>
-
+		<title>Photon by HTML5 UP</title>
 		<meta charset="utf-8" />
-
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
-
 		<link rel="stylesheet" href="assets/css/main.css" />
-
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
-
 		<!--[if lte IE 9]><link rel="stylesheet" href="assets/css/ie9.css" /><![endif]-->
-
 	</head>
-
 	<body>
 
-
-
 		<!-- Header -->
-
 			<section id="header">
-
 				<div class="inner">
-
-					<span class="icon major fa-database"></span>
-
-					<h1>
-
-                        <script language="JavaScript">
-
-                            var myDate = new Date();   /* hour is before noon */
-
-                            if ( myDate.getHours() < 12 )
-
-                            {
-
-                                document.write("");
-
-                            }
-
-                            else  /* Hour is from noon to 5pm (actually to 5:59 pm) */
-
-                                if ( myDate.getHours() >= 12 && myDate.getHours() <= 17 )
-
-                                {
-
-                                    document.write("");
-
-                                }
-
-                                else  /* the hour is after 5pm, so it is between 6pm and midnight */
-
-                                    if ( myDate.getHours() > 17 && myDate.getHours() <= 24 )
-
-                                    {
-
-                                        document.write("Good Evening,");
-
-                                    }
-
-                                    else  /* the hour is not between 0 and 24, so something is wrong */
-
-                                    {
-
-                                        document.write("G'day,");
-
-                                    }
-
-                            /* remove the following in your live script. It is for testing */
-
-                            //document.write("<br /><br /> The hour is: ") document.write( myDate.getHours() );
-
-                        </script>
-
-
-                        <br />
-<br />
-
-
-                        <strong>Analisi sull'errore del tempo di bordo di AGILE</strong> <br />
-
-                         <br />
-
-                        <strong>Alessio Trois, Andrea Argan</strong>                    
-					<p><br /></p>
-
+					<span class="icon major fa-cloud"></span>
+					<br />
+					<h1>Telemetry Parser and Correction<br /><br />
+					<h3>Alessio Trois</p>
 					<ul class="actions">
-
-						<li><a href="#one" class="button scrolly">Si Parte!</a></li>
-
+						<li><a href="#one" class="button scrolly">Discover</a></li>
 					</ul>
-
 				</div>
-
 			</section>
 
-
-
 		<!-- One -->
-
 			<section id="one" class="main style1">
 
 				<div class="container">
-
 					<div class="row 150%">
-
-						<div class="6u 12u$(medium)">
-
-							<header class="major">
-
-								<h2>Introduzione<br /></h2>
-
-							</header>
-
-							<p>
-
-							- E' stata condotta un'analisi di dettaglio sul problema del timing prima e dopo il 1 Luglio (leap second)<br />
-
-							- Creazione di un algoritmo sulla base di eventi definiti a terra<br />
-
-							- analisi è stata condotta utilizzando la TM di bordo ed I file ausiliari prodotti da TPZ<br />
-                               
-							</p>
-
+						<div class="10u$ 12u$(medium)">
+							<h1>Instument Software Pipeline AIV/CAL Architecture<br />
+							<span class="image fit"><img src="images/img_00.jpg" alt="" /></span>
 						</div>
-
-						<div class="6u$ 12u$(medium) important(medium)">
-
-							<span class="image fit">
-
-							    <img src="images/presentazione_03.png" alt="" />
-
-							      Figura 1. Errore sul tempo dall'orbita 38000 all'orbita 45998
-							</span>
-
-
-
-						</div>
-
 					</div>
-
 				</div>
-
 			</section>
-
-
 
 		<!-- Two -->
-
 			<section id="two" class="main style2">
-
 				<div class="container">
-
 					<div class="row 150%">
-
 						<div class="6u 12u$(medium)">
-
-							<header class="major">
-
-								<h2>Input Utilizzati</h2>
-
-							</header>
-
+							<h3>Definition of processing levels (Instrument)</h3>
+							<h5>Preliminary description of scientific 
+							data format for IXPE: LV0a, LV0b, LV1a
+							v0.1_201706
+							</h5>
 							<p>
-
-								TCSP → file ausiliario fornito da TPZ con tutti I TC inviati a bordo (generato dal pianificatore)
-
-
-							</p>
-
-			    
-							<p>
-
-							    OBTUTC →file ausiliario fornito da TPZ contente le informazioni di sincronizzazione tra la stazione di terra e l'OBDH 
-
-
-
-
-							</p>
-
-			    
-							<p>
-
-							    Cor TM3301 dei TC3323 e TC3324 → questo file di telemetria del PL contiene il tempo di esecuzione dei TC di cambio fase orbitale inviati alla PDHU                       
-							</p>
-
-
-
+<b>The telemetry parser (LV0->LV0a) </b> consists in the rewriting of the raw telemetry
+data produced by the Instrument (LV0) in more suitable format with the data divided according
+to type, mode, detector, etc... No information is added: it is only a translation/reorganization of the available data. 
+The format of the output files will be the widely used FITS standard. This task populates 
+the LV0a archive with all the telemetry produced by the Instrument(Scientific Data, Housekeeping's,
+Scientific Ratemeters, Telemetry Reports, etcetc).</p>
+<p>
 
 						</div>
-
-						<div class="6u 12u$(medium)">
-
-							<header class="major">
-
-								<h2>Sequenza Operazioni<br /></h2>
-
-							</header>
-
-							<p>
-							
-							  - TPZ carica I TC pianificati nell' OBDH.<br />
-							  -  L'OBDH invia I TC alla PDHU al tempo calcolato a terra da TPZ.
-
-							  Il tempo dell'OBDH ha un errore rispetto al tempo reale. Questo tempo viene corretto ogni tot orbite da TPZ con appositi comandi. 
-							  Il file OBTUTC fornisce l'errore del tempo di bordo dell'OBDH contatto per contatto
-
-							    <br />
-
-
-
-							</p>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-
-            <section id="two" class="main style1">
-
-				<div class="container">
-
-					<div class="row 150%">
-
-						<div class="6u 12u$(medium)">
-
-							<header class="major">
-
-								<h2>Algoritmo<br /></h2>
-
-							</header>
-
-							  <p>
-
-							Tenuto conto di questo abbiamo pensato di calcolare la differenza di tempo tra i TC di cambio fase orbitale (SAA, nominal, etc etc) calcolati a terra dalla flight dynamics ed il tempo di esecuzione dello stesso a bordo.
-							Il tutto è corretto per l'errore di sincronismo dell'OBDH
-							<br />
-							<h3>DiffRealTimePDHU = <br /> Time_TCTPZ  - Time_TCPDHU - DiffTimeTPZOBDH</h3>
-							<br />
-							  </p>
-
-							<header class="major">
-
-								<h3>IMPORTANTE CHE I TCPS SIANO TRASFERITI IN MODO CORRETTO!!!<br /></h3>
-
-							</header>
-
-
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-
-
-
-            <section id="five" class="main style2">
-
-				<div class="container">
-
-					<div class="row 150%">
-
-						<div class="6u 12u$(medium)">
-<br />
-
-							<p>
-
-							    Differenze tra il tempo di Enter SAA Phase calcolato a terra da Telespazio
-							    ed il tempo di invio del TC a Bordo PDHU.
-
-							    In questa immagine  viene mostrato un grafico dello scostamento temporale per i dati fino al 1 Luglio 2015<br /><br />
-							    La riga blu mostra che il ritardo nell'invio del TC da parte dell'OBDH alla PDHU è di circa 100ms<br /><br />
-							    La riga verde è il ritardo medio nell'accetazione del telecomando : 159ms<br />
-
-
-
-
-							</p>
-						</div>
-
-    
-
-								   
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_09.png" alt="" />
-						    
-<!--
-						    Figure 6. Creating the GALAXY table.-->
-
-						</span>
-					 </div>     
-				</div>
-	
-	</section>
-
-
-
-            <section id="six" class="main style1">
-
-				<div class="container">
-
-					<div class="row 150%">
-
-						<div class="6u 12u$(medium)">
-						<header class="major">
-
-								<h2>PPSE SWITCH OFF<br /></h2>
-
-							</header>						
-						
-<br />
-
-							<p>
-
-							    Ritardo nel tag dei tempi di bordo  dopo il 1 Luglio 2015 <br />
-							    In blu gli spegnimenti del PPSE <br />
-
-
-
-
-							</p>
-						</div>
-
-    
-
-								   
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_00.png" alt="" />
-						    
-<!--
-						    Figure 6. Creating the GALAXY table.-->
-
-						</span>
-					 </div>     
-				</div>
-
-			</section>
-
-
-
-            <section id="seven" class="main style2">
-
-				<div class="container">
-
-					<div class="row 150%">
-	
-						<div class="6u 12u$(medium)">
-						<header class="major">
-
-								<h2>PPSE TIME VALIDITY<br /></h2>
-
-							</header>
-<br />
-
-							<p>
-
-							   Dati dopo il 1 Luglio 2015 <br />
-							   
-							   In verde il parametro PPSE TIME VALIDITY della TM di PL 3201 <br />
-
-
-
-
-							</p>
-						</div>
-
- 
 						<div class="6u$ 12u$(medium) important(medium)">
-							<span class="image fit">
-							    <img src="images/presentazione_10.png" alt="" />
-							    
-	<!--
-							    Figure 6. Creating the GALAXY table.-->
-
-							</span>
-						</div>     
+							<span class="image fit"><img src="images/img_01.jpg" alt="" /></span>
+						</div>
+					</div>
+					<div class="row 150%">
+						<div class="18u 12u$(medium)">
+<b>The LV0 Correction (LV0a->LV1)</b>  consists of a set of programs that will process LV0a data producing data structures and 
+formats optimized for the following data analysis steps. The LV0a data produced by the telemetry parser are a simple translation
+in FITS format of the telemetry content. Subsequent analysis requires that some of the data be processed and stored with some added information. <br>
+For example: conversion of units, derivation of new quantities which are a function of data stored in different files/columns of LV0a data, uniform the 
+different time formats in MET (Mission Elapsed Time), stops any unnecessary engineering information, etc.etc. <br>
+All the corrections which are relatively stable and do not depend on time variable calibration parameters 
+are done in the LV0corr subsystem. </p>
+						</div>
 					</div>
 				</div>
-
 			</section>
 
-		<section id="otto" class="main style1">
-
-			<div class="container">
-
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>Calibrazione con eventi noti<br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-						    In verde un  GRB osservato da AGILE ad Agosto e l'evento dell'onda gravitazionale del 14 Settembre  <br />
+		<!-- Three -->
+			<section id="three" class="main style1">
 
 
 
 
-						</p>
-					</div>
 
 
 
-							    
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_01.png" alt="" />
-						    
-	<!--
-						    Figure 6. Creating the GALAXY table.-->
 
-						</span>
-					</div>     
-				</div>
-			</div>
-		</section>
 
-			
-            <section id="seven" class="main style2">
+
+
+
+
+
+
 
 				<div class="container">
-
 					<div class="row 150%">
-	
-						<div class="6u 12u$(medium)">
-						<header class="major">
-
-								<h2>Calibrazione con un GRB noto<br /></h2>
-
-							</header>
-<br />
-
+						<div class="4u 12u$(medium)">
+							<h3>Definition of processing levels (SOC)</h3>
+<h5>IXPE
+Science Data Management Plan
+DRAFT version 2017-Aug- 04</h5>
 							<p>
+<b>Level 0 (L0)</b> data are raw CCSDS telemetry packets collected by the MOC and packaged into 24-
+hour packet files. These files along with pass reports are then transferred to the SOC.
+Housekeeping data from both the spacecraft and instrument, instrument science data,
+metrology-system data, and star-tracker data are included.</p>
+<p>
+</div>
 
-							  GRB del 11/08/2015 <br />
-							  Orbita 42920 DeltaT = -17.120 <br />
-							  Tempo medio ritardo invio TC =-0.159<br />
-							  Differenza = -17.040+/-0.1 <br /><br /><br />
-							 
-							  
-							  Il T0 nella curva di luce di MCAL ricavata dall’OBT 366409351. è 73351. (second of day)
-							  quello ricostruito dall’IPN è 73333.971(-0.026,+0.018) quindi il ritardo è 17.029 sec.
+						<div class="4u 12u$(medium)">
+<b>Level-1 (L1)</b> data contains everything: the telemetry packets have been unpacked, time-
+ordered, any duplicates deleted, and the results converted into FITS files. The L1 data are
+unfiltered; thus, for example, event files will include all events in a given pointing (or slew),
+which may include data from the source, data in the South Atlantic Anomaly (SAA), data when
+pointed at the Earth, etc.</p>
 
-
-
-							</p>
 						</div>
-
-    
-
-								   
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_11.png" alt="" />
-						    
-<!--
-						    Figure 6. Creating the GALAXY table.-->
-
-						</span>
-					 </div>     
+						<div class="4u$ 12u$(medium)">
+<p>
+<b>Level-2 (L2)</b> data contain clean data that have been time filtered to include only data from Good
+Time Intervals (GTI) when the detector was exposed to the source. In addition, relevant
+calibrations have been applied: Positional data will have been converted to J2000 sky
+coordinates, etc. To reduce the size of downloads, the L2 data files will include the initial track
+direction but will not contain track images.</p>
+						</div>
+					</div>
 				</div>
 
 
 			</section>
 
-			
-			
-			
-		<section id="seven" class="main style1">
-
-			<div class="container">
-
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>Evento GW<br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-						    GW del 14/09/2015 <br />
-						    Orbita 43399 DeltaT = -1.220  <br />
-						    Tempo medio ritardo invio TC =-0.159 <br />
-						    Differenza = -1.061  <br />
-
-
-
-
-						</p>
+		<!-- Four -->
+			<section id="four" class="main style2 special">
+				<div class="container">
+					<div class="row 150%">
+						<h1>SOC Software Pipeline???<br />
+						<div class="10u$ 12u$(medium)">
+							<span class="image fit"><img src="images/img_02.jpg" alt="" /></span>
+						</div>
 					</div>
+				</div>
+			</section>
 
-
-
-							    
-				<div class="6u$ 12u$(medium) important(medium)">
-					<span class="image fit">
-					    <img src="images/presentazione_02.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>
-				 </div>     
-			</div>
-
-
-		</section>			
-			
-			
-			
-			
-            <section id="seven" class="main style2">
+		<!-- Five -->
+		<!--
+			<section id="five" class="main style1">
+		<!-- Four -->
 
 				<div class="container">
-
 					<div class="row 150%">
-	
-						<div class="6u 12u$(medium)">
-						<header class="major">
-
-								<h2>Analisi dei gradini temporali <br /></h2>
-
-							</header>
-<br /><br /><br />
-
-							<p>
-
-							Caso dell'orbita 43775
-
-							</p>
+						<h1>SOC Software Pipeline???<br />
+						<div class="10u$ 12u$(medium)">
+							<span class="image fit"><img src="images/img_03.jpg" alt="" /></span>
 						</div>
-
-    
-
-								   
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_12.png" alt="" />
-						    
-<!--
-						    Figure 6. Creating the GALAXY table.-->
-
-						</span>
-					 </div>     
+					</div>
 				</div>
-
-
 			</section>
-
-			
-			
-			
-		<section id="seven" class="main style1">
-
-			<div class="container">
-
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>Analisi dei gradini temporali <br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-						    Abbiamo analizzato le orbita dalla 43771 alla 43779<br />
-						    In particolare abbiamo preso in considerazione il parametro obtcorr degli eventi di GRID <br />
-						    Questo parametro esprime la correzione del pulse per second sui tempi degli evetni <br/>
-						    
-
-						</p>
-					</div>
-
-
-
-							    
-				<div class="6u$ 12u$(medium) important(medium)">
-					<span class="image fit">
-					    <img src="images/presentazione_13.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>
-	
-					
-				 </div>   
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<span class="image fit">
-					    <img src="images/presentazione_05.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>
-					<span class="image fit">
-					    <img src="images/presentazione_07.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>					
-
-					</div>
-
-
-
-							    
-				<div class="6u$ 12u$(medium) important(medium)">
-
-					<span class="image fit">
-					    <img src="images/presentazione_06.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>
-					<span class="image fit">
-					    <img src="images/presentazione_08.png" alt="" />
-					    
-<!--
-					    Figure 6. Creating the GALAXY table.-->
-
-					</span>					
-					
-				 </div> 				 
-			</div>
-
-
-		</section>			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-            <section id="seven" class="main style2">
-
-				<div class="container">
-
-					<div class="row 150%">
-	
-						<div class="6u 12u$(medium)">
-						<header class="major">
-
-								<h2>Riepilogo post Luglio e situazione attuale<br /></h2>
-
-							</header>
-<br />
-
-							<p>
-
-							  Attualmente abbiamo un ritardo temporale nel time tag degli eventi di bordo di circa 128 secondi
-
-
-
-							</p>
-						</div>
-
-    
-
-								   
-					<div class="6u$ 12u$(medium) important(medium)">
-						<span class="image fit">
-						    <img src="images/presentazione_04.png" alt="" />
-						    
-<!--
-						    Figure 6. Creating the GALAXY table.-->
-
-						</span>
-					 </div>     
-				</div>
-
-
-			</section>
-
-			
-			
-			
-		<section id="seven" class="main style1">
-
-			<div class="container">
-
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>Possibili Soluzioni<br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-							  
-							  1 Non operare a bordo e gestire via SW la correzione dei tempi a terra (precisione 100/200 ms) <br />
-							    così come mostrato durante questa presentazione  <br />
-
-
-						</p>
-					</div>
-
-
-
-							    
-					<div class="6u 12u$(medium)">
-					<header class="major">
-<br />
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-							  
-							  2 Operare a bordo sul PPSE<br />
-								  2.1 PPSE spento<br />
-								  2.2 PPSE acceso<br />
-
-
-						</p>
-					</div>   
-			</div>
-
-
-		</section>			
-						
-			
-			
-			
-			
-			
-		<section id="seven" class="main style2">
-
-			<div class="container">
-
-				<div class="row 150%">
-
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>PPSE spento<br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-							  Questo determina un'incertezza sulla ripartenza del tempo di bordo e prevede l'utilizzo dell'oscillatore locale per<br /> incrementare I registri dei microsecondi e secondi.<br />
-							  Questo procedura ci darebbe un errore con un drift costante che si potrebbe riallineare a terra con eventi puntuali come i GRB<br />
-
-								  
-						</p>
-					</div>
-
-
-
-							    
-					<div class="6u 12u$(medium)">
-					<header class="major">
-
-							<h2>PPSE acceso<br /></h2>
-
-						</header>
-<br />
-
-						<p>
-
-						    
-						    
-							  
-						    Verificare la possibilità ad ogni orbita forzare l'init del tempo di bordo e inibire l'uso del PPS generato dal PPSE in modo da utlizzare il solo oscillatore locale<br />
-
-						</p>
-					</div>   
-			</div>
-
-
-		</section>				
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+		-->
 
 		<!-- Footer -->
-
 			<section id="footer">
-
 				<ul class="icons">
-
-                    <li><a href="https://scholar.google.com.au/citations?user=VgE2lqMAAAAJ&hl=en" class="icon alt fa-google"><span class="label">Email</span></a></li>
-
-					<li><a href="https://github.com/macrocosme" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
-
-					<li><a href="mailto:dvohl@astro.swin.edu.au" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
-
+					<li><a href="#" class="icon alt fa-twitter"><span class="label">Twitter</span></a></li>
+					<li><a href="#" class="icon alt fa-facebook"><span class="label">Facebook</span></a></li>
+					<li><a href="#" class="icon alt fa-instagram"><span class="label">Instagram</span></a></li>
+					<li><a href="#" class="icon alt fa-github"><span class="label">GitHub</span></a></li>
+					<li><a href="#" class="icon alt fa-envelope"><span class="label">Email</span></a></li>
 				</ul>
-
 				<ul class="copyright">
-
-					<li>&copy; Alessio Trois, 2016.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-
+					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 				</ul>
-
 			</section>
 
-
-
 		<!-- Scripts -->
-
 			<script src="assets/js/jquery.min.js"></script>
-
 			<script src="assets/js/jquery.scrolly.min.js"></script>
-
 			<script src="assets/js/skel.min.js"></script>
-
 			<script src="assets/js/util.js"></script>
-
 			<!--[if lte IE 8]><script src="assets/js/ie/respond.min.js"></script><![endif]-->
-
 			<script src="assets/js/main.js"></script>
 
-
-
 	</body>
-
 </html>
-
-
-
